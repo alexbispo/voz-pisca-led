@@ -96,7 +96,7 @@ Monte o circuito conforme a imagem abaixo. Conecte o pino positivo (anodo, perna
 O fluxo de dados e processamento ocorre da seguinte forma:
 
 1.  **Captura de Áudio**: O navegador captura o áudio do microfone do usuário.
-2.  **Prepara o audio capturado**: O modelo `whisper-tiny`  espera a entrada em um formato específico, então o audio capturado é transformado para atender ao formato exigido pelo modelo.
+2.  **Pré-processamento do audio**: O modelo `whisper-tiny`  espera a entrada em um formato específico, então o audio capturado é transformado para atender ao formato exigido pelo modelo.
 3.  **Transcrição (Speech-to-Text)**: O áudio é processado pela biblioteca `Transformers.js` que executa o modelo `whisper-tiny` localmente para converter a fala em texto.
 4.  **Interpretação de Comando**: A aplicação Angular analisa o texto transcrito usando uma expressão regular (Regex) para identificar as palavras-chave de ativação (`ligar`, `desligar`, etc.).
 5.  **Comunicação Serial**: Ao encontrar uma palavra-chave, a aplicação envia o comando correspondente (`ON` ou `OFF`) para o Arduíno através da Web Serial API.
