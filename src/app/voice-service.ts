@@ -9,7 +9,7 @@ const TF_URL = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.7.2";
 @Injectable({ providedIn: "root" })
 export class VoiceService {
   // private tf?: any;
-  private transcriber: any; // pipeline
+  private transcriber: any;
   private mediaRecorder?: MediaRecorder;
   private chunks: Blob[] = [];
   loading = false;

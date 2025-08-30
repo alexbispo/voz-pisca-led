@@ -56,22 +56,12 @@ export class App {
     }
   }
 
-  async quick(cmd: 'ON'|'OFF'|'TOGGLE') {
-    try {
-      await this.serial.sendLine(cmd);
-      this.append("Enviado comando para o Arduino: " + cmd);
-    } catch (e:any) {
-      this.append("Erro ao enviar comando para o Arduino: " + (e?.message || e))
-    }
-  }
-
-  private textToCmd(text = ""): 'ON'|'OFF'|'TOGGLE'|null {
+  private textToCmd(text = ""): 'ON'|'OFF'|null {
     const t = text.toLowerCase();
     if (/\b(liga|ligar|acender|ativar|leg)\b/.test(t) || /\bacend(e|er)\b/.test(t)) return 'ON';
     if (/\b(ol|olá|oi|hello)\b/.test(t) || /\bacend(e|er)\b/.test(t)) return 'ON';
     if (/\b(desliga|desligar|apagar|desativar)\b/.test(t) || /\bapag(a|ar)\b/.test(t)) return 'OFF';
     if (/\b(bye|tchau|até)\b/.test(t) || /\bapag(a|ar)\b/.test(t)) return 'OFF';
-    if (/\b(alternar|inverter|toggle)\b/.test(t)) return 'TOGGLE';
     return null;
   }
 
