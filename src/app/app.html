@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">{{ title() }}</mat-toolbar>
 <div class="container">
   <div class="actions">
-    <button matButton="elevated" color="accent">
+    <button matButton="elevated" color="accent" (click)="connectSerial()">
       <mat-icon>usb</mat-icon>&nbsp; Conectar Serial
     </button>
 
@@ -15,9 +15,9 @@
       <mat-icon>stop</mat-icon>&nbsp; Parar
     </button>
 
-    <button matButton="tonal">💡 ON</button>
-    <button matButton="tonal">🌑 OFF</button>
-    <button matButton="tonal">🔁 TOGGLE</button>
+    <button matButton="tonal" (click)="quick('ON')">💡 ON</button>
+    <button matButton="tonal" (click)="quick('OFF')">🌑 OFF</button>
+    <button matButton="tonal" (click)="quick('TOGGLE')">🔁 TOGGLE</button>
   </div>
 
   <mat-card>
