@@ -1,0 +1,16 @@
+.container {
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 0 12px;
+  display: grid;
+  gap: 16px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
